@@ -21,3 +21,17 @@ spec:
           image: gowdasagar/nginx:latest
           ports:
             - containerPort: 80
+-----
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: prod
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30012
