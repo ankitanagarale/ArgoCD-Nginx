@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: gowdasagar/nginx:latest
+          image: nginx:1.14.2
           ports:
             - containerPort: 80
 
